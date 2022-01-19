@@ -310,7 +310,7 @@ function logout(){
 
 // HEADER - LOCATION FILE
 function pathTo($folder, $fileName){
-  echo "<script>window.location.href = '/Inventory_POS_Pielyn/$folder/$fileName.php'</script>";
+  echo "<script>window.location.href = '/Inventory-POS-Pielyn/$folder/$fileName.php'</script>";
 }
 
 // IF STATUS IS INVALID STAY IN LOGIN FORM
