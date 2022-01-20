@@ -1,16 +1,16 @@
 <?php
     //ENTER THE RELEVANT INFO BELOW
-    // $mysqlUserName      = "u249832963_pielyn";
-    // $mysqlPassword      = "Pielynstore123";
-    // $mysqlHostName      = "localhost";
-    // $DbName             = "u249832963_pielyn_db";
-    // $backup_name        = "";
-
-    $mysqlUserName      = "root";
-    $mysqlPassword      = "";
+    $mysqlUserName      = "u249832963_pielyn";
+    $mysqlPassword      = "Pielynstore123";
     $mysqlHostName      = "localhost";
-    $DbName             = "pielyn_db";
+    $DbName             = "u249832963_pielyn_db";
     $backup_name        = "";
+
+    // $mysqlUserName      = "root";
+    // $mysqlPassword      = "";
+    // $mysqlHostName      = "localhost";
+    // $DbName             = "pielyn_db";
+    // $backup_name        = "";
     $tables             = array("audit_trail", "brand", "cart", "cart_void", "category", "po_void", "product", "purchase_order", "receipt", "stocks", "supplier", "supplier_products", "users");
 
    //or add 5th parameter(array) of specific tables:    array("mytable1","mytable2","mytable3") for multiple tables

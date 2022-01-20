@@ -50,19 +50,19 @@ security_session();
                 <form class="" action="" method="post">
                       <div id="txt"class="firstName">
                           <label for="">First Name</label><br>
-                          <input type="text" name="firstName" required>
+                          <input type="text" name="firstName" required minlength="3" maxlength="15">
                       </div>
                       <div id="txt"class="lastName">
                           <label for="">Last Name</label><br>
-                          <input type="text" name="lastName" required>
+                          <input type="text" name="lastName" required minlength="2" maxlength="15">
                       </div>
                       <div id="txt"class="username">
                           <label for="">Username</label><br>
-                          <input type="text" name="userName" required>
+                          <input type="text" name="userName" required minlength="4" maxlength="15">
                       </div>
                       <div id="txt"class="password">
                           <label for="">Password</label><br>
-                          <input type="password" name="password" required>
+                          <input type="password" name="password" required minlength="5" maxlength="15">
                       </div>
                       <div id="txt"class="userType">
                           <label for="">User Type </label><br>

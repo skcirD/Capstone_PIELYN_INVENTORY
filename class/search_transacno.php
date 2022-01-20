@@ -21,13 +21,14 @@ class search_transacno extends config
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     if($result){
       foreach ($result as $data) {
+        $total = $data['total'] - $data['disc'];
         echo "<tr>
                   <td>$data[cashier]</td>
                   <td>$data[transno]</td>
                   <td>$data[pcode]</td>
                   <td>$data[pdesc]</td>
                   <td>$data[qty]</td>
-                  <td>$data[total]</td>
+                  <td>$total</td>
                   <td>$data[sdate]</td>
                   <td>$data[time]</td>
               </tr>";
@@ -41,7 +42,7 @@ class search_transacno extends config
 
   public function getTotalSalesbyTransNo(){
     $con = $this->con();
-    $stmt = $con->prepare("SELECT SUM(total) as total FROM cart WHERE transno LIKE '%$this->text%'");
+    $stmt = $con->prepare("SELECT SUM(total-disc) as total FROM cart WHERE transno LIKE '%$this->text%'");
 
     $stmt->execute();
     $rowC = $stmt->rowCount();

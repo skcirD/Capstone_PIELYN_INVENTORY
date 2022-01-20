@@ -7,15 +7,15 @@ security_session();
 ?>
 <?php
 function dropTable(){
-  // $dbhost = 'localhost';
-  // $dbuser = 'u249832963_pielyn';
-  // $dbpass = 'Pielynstore123';
-  // $dbname = 'u249832963_pielyn_db'; HOSTINGER
-
   $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'pielyn_db';
+  $dbuser = 'u249832963_pielyn';
+  $dbpass = 'Pielynstore123';
+  $dbname = 'u249832963_pielyn_db'; HOSTINGER
+
+  // $dbhost = 'localhost';
+  // $dbuser = 'root';
+  // $dbpass = '';
+  // $dbname = 'pielyn_db';
   $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
   $stmt="DROP TABLE `audit_trail`, `brand`, `cart`, `cart_void`, `category`, `expiration_date`, `no_expiration_date`, `po_void`, `product`, `purchase_order`,
@@ -36,8 +36,8 @@ if(isset($_POST["import"]))
   if($extension == 'sql')
   {
     dropTable();
-   // $connect = mysqli_connect("localhost", "u249832963_pielyn", "Pielynstore123", "u249832963_pielyn_db"); HOSTINGER
-   $connect = mysqli_connect("localhost", "root", "", "pielyn_db");
+   $connect = mysqli_connect("localhost", "u249832963_pielyn", "Pielynstore123", "u249832963_pielyn_db"); //HOSTINGER
+   //$connect = mysqli_connect("localhost", "root", "", "pielyn_db");
    $output = '';
    $count = 0;
    $file_data = file($_FILES["database"]["tmp_name"]);

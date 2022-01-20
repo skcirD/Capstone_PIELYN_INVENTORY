@@ -14,13 +14,15 @@ class sales_invoice extends config
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       foreach ($result as $data) {
+        $total = $data['total'] - $data['disc'];
+
         echo "<tr>
                   <td>$data[cashier]</td>
                   <td>$data[transno]</td>
                   <td>$data[pcode]</td>
                   <td>$data[pdesc]</td>
                   <td>$data[qty]</td>
-                  <td>$data[total]</td>
+                  <td>$total</td>
                   <td>$data[sdate]</td>
                   <td>$data[time]</td>
               </tr>";
@@ -29,7 +31,7 @@ class sales_invoice extends config
 
     public function getTotalSales(){
       $con = $this->con();
-      $stmt = $con->prepare("SELECT SUM(total) as total FROM  cart");
+      $stmt = $con->prepare("SELECT SUM(total-disc) as total FROM  cart");
 
       $stmt->execute();
       $rowC = $stmt->rowCount();

@@ -28,7 +28,7 @@ require_once '../php/init.php';
                 <input type="password" name="password">
               </div>
               <div class="forgotPass">
-                <a href="#">Forgot Password</a>
+                <a href="forgot_password.php">Forgot Password</a>
               </div>
               <div class="inputBx">
                 <input type="submit" name="submit" value="Sign in">
